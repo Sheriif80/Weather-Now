@@ -4,25 +4,25 @@ A beginner-friendly Flutter weather application.
 
 Features
 
-Search weather by city
+- Search weather by city
 
-Get weather data from an API
+- Get weather data from an API
 
-Cubit state management
+- Cubit state management
 
-Dynamic theme color based on weather condition
+- Dynamic theme color based on weather condition
 
-Light / Dark mode
+- Light / Dark mode
 
-Smooth theme animations
+- Smooth theme animations
 
 Built With
 
-Flutter & Dart
+- Flutter & Dart
 
-flutter_bloc (Cubit)
+- flutter_bloc (Cubit)
 
-Dio
+- Dio
 
 Goal
 
@@ -31,3 +31,4 @@ This project was built to practice Flutter basics, API integration, and state ma
 Author
 
 Sherif Ashraf
+
