@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SearchScreen();
+                    return const SearchScreen();
                   },
                 ),
               );
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
           } else if (state is WeatherLoadingState) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is WeatherLoadedState) {
-            return WeatherInfoBody();
+            return const WeatherInfoBody();
           } else {
             return const Text('There was an error :(())');
           }

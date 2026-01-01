@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
     final condition = context.read<GetWeatherCubit>().weatherModel?.condition;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Search city")),
+      appBar: AppBar(title: const Text("Search city")),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -27,16 +27,19 @@ class SearchScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: TextField(
               onSubmitted: (value) async {
-                GetWeatherCubit getWeatherCubit =
+                final GetWeatherCubit getWeatherCubit =
                     BlocProvider.of<GetWeatherCubit>(context);
                 getWeatherCubit.getWeather(cityName: value);
                 Navigator.pop(context);
               },
               decoration: InputDecoration(
-                label: Text('Search'),
-                suffixIcon: Icon(Icons.search),
-                contentPadding: EdgeInsets.all(25),
-                hint: Text('Enter city name', style: TextStyle(fontSize: 16)),
+                label: const Text('Search'),
+                suffixIcon: const Icon(Icons.search),
+                contentPadding: const EdgeInsets.all(25),
+                hint: const Text(
+                  'Enter city name',
+                  style: TextStyle(fontSize: 16),
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

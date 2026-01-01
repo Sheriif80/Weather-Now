@@ -8,12 +8,12 @@ class WeatherInfoBody extends StatelessWidget {
   const WeatherInfoBody({super.key});
   @override
   Widget build(BuildContext context) {
-    WeatherModel weatherModel = BlocProvider.of<GetWeatherCubit>(
+    final WeatherModel weatherModel = BlocProvider.of<GetWeatherCubit>(
       context,
     ).weatherModel!;
-    int minTemp = weatherModel.minTemp.round();
-    int maxTemp = weatherModel.maxTemp.round();
-    int temp = weatherModel.temp.round();
+    final int minTemp = weatherModel.minTemp.round();
+    final int maxTemp = weatherModel.maxTemp.round();
+    final int temp = weatherModel.temp.round();
 
     return Container(
       decoration: BoxDecoration(
@@ -34,11 +34,11 @@ class WeatherInfoBody extends StatelessWidget {
           children: [
             Text(
               weatherModel.city,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
             ),
             Text(
               'Updated at ${weatherModel.date.hour}:${weatherModel.date.minute}',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
             const SizedBox(height: 32),
             Row(
@@ -47,26 +47,29 @@ class WeatherInfoBody extends StatelessWidget {
                 Image.network('https:${weatherModel.image}'),
                 Text(
                   '$temp C',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                  ),
                 ),
                 Column(
                   children: [
                     Text(
                       'MAX temp: $maxTemp C',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'MIN temp: $minTemp C',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Text(
               weatherModel.condition.toUpperCase(),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
             ),
           ],
         ),
